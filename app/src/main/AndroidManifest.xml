@@ -187,5 +187,10 @@
 			android:exported="false"
 			android:permission="${applicationId}.permission.CONTROL_TUNNELS">
 		</receiver>
+
+		<service android:name=".core.service.WGAutoTunnelRemote"
+			android:exported="true"
+			android:permission="android.permission.BIND_VPN_SERVICE"
+			/>
     </application>
 </manifest>
