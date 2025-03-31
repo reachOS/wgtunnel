@@ -112,16 +112,6 @@ class WGAutoTunnelRemote : LifecycleService() {
 		override fun setTunnel(name: String, enabled: Boolean, callback: IWGAutoTunnel.ICallback) {
 			lifecycleScope.launch {
 				try {
-					val vpnIntent = VpnService.prepare(baseContext)
-					Timber.d("VPN prepare intent: $vpnIntent")
-					if (vpnIntent != null) {
-						startActivity(
-							Intent(baseContext, MainActivity::class.java).apply {
-								putExtra("prepare", true)
-								flags = Intent.FLAG_ACTIVITY_NEW_TASK
-							}
-						)
-					}
 					val tunnelConf = appDataRepository.tunnels.findByTunnelName(name)
 					if (tunnelConf != null) {
 						if (enabled) {
