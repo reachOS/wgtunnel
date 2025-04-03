@@ -243,6 +243,10 @@ class WGAutoTunnelRemote : LifecycleService() {
 			}
 		}
 
+		override fun prepareVpnService(): Boolean {
+			return VpnService.prepare(baseContext) != null
+		}
+
 	}
 
 	override fun onBind(intent: Intent): IBinder {

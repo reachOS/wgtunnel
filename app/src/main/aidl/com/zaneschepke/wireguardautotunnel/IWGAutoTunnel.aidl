@@ -22,6 +22,7 @@ interface IWGAutoTunnel {
 		void onName(@nullable String name);
 	}
 	void getPrimaryTunnelName(ITunnelNameCallback callback);
+	boolean prepareVpnService();
 //	List<String> getExcludedApps(String name);
 //	List<String> getIncludedApps(String name);
 //	void setExcludedApps(String name, in List<String> apps);
